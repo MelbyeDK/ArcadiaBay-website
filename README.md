@@ -51,18 +51,6 @@ To self-host:
 1. Run `npm run build`
 2. Upload the contents of the `dist/` folder to your web root
 
----
-
-## 📁 Project Structure
-/
-├── src/ # Astro components, pages, styles
-├── public/ # Images and static assets
-├── astro.config.mjs # Astro configuration
-├── package.json
-├── .gitignore
-└── README.md
-
-
 
 ## ⚠️ Disclaimer
 
