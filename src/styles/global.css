@@ -68,9 +68,9 @@
         }
 
         .hero {
-            position: relative;
+            position: relative; 
             height: 70vh;
-            background: url('/src/assets/ab/start.jpg') center/cover no-repeat;
+            background: url('assets/ab/start.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
