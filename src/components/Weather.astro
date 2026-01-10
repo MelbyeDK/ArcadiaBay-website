@@ -1,0 +1,32 @@
+---
+import { useState } from 'react'; // only if you use React, but we’ll use vanilla JS below
+const weatherData = {
+  location: "Arcadia Bay",
+  condition: "Foggy",
+  temperature: 14 // Celsius
+};
+---
+
+<section id="weather-widget">
+  <h2>Weather in {weatherData.location}</h2>
+  <p>Condition: {weatherData.condition}</p>
+  <p>Temperature: {weatherData.temperature}°C</p>
+</section>
+
+<style>
+#weather-widget {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(30,40,50,0.7);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+#weather-widget h2 {
+  margin-bottom: 0.5rem;
+}
+
+#weather-widget p {
+  margin: 0.2rem 0;
+}
+</style>

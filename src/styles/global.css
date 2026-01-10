@@ -1,17 +1,220 @@
-:root {
-  --bg: #0e141b;
-  --text: #d6dce2;
-  --muted: #8b98a5;
+/* --- Background & Container --- */
+        /* Reset and base styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            background: linear-gradient(to bottom, #1c1c2b, #4a4e69);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(28, 28, 43, 0.85);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+        position: absolute;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        
+        }
+
+        .logo img {
+            width: 50px;  /* Adjust to fit your logo size */
+            height: auto;
+        }
+
+        header h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3em;
+            color: #f0e3ca;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #dcd6f7;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background: rgba(28, 28, 43, 0.9);
+            padding: 15px 0;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #f0e3ca;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd6a5;
+        }
+
+        .hero {
+            position: relative;
+            height: 70vh;
+            background: url('/src/assets/ab/start.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top:0; left:0;
+            width:100%; height:100%;
+            background: url('/src/assets/ab/fog.png') repeat-x;
+            opacity:0.15;
+            animation: moveFog 60s linear infinite;
+            z-index:2;
+        }
+
+        @keyframes moveFog {
+            0% {background-position-x:0;}
+            100% {background-position-x:1000px;}
+        }
+
+
+        .hero-text {
+            position: relative;
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .hero-text h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px #000;
+        }
+
+        .hero-text p {
+            font-size: 1.2em;
+            text-shadow: 1px 1px 5px #000;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section h3 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2em;
+            color: #ffd6a5;
+        }
+
+        .info-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .card {
+            background: rgba(40, 40, 60, 0.85);
+            padding: 10px;
+            border-radius: 15px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h4 {
+            margin-bottom: 10px;
+            color: #f0e3ca;
+        }
+
+        .card p {
+            font-size: 0.95em;
+            color: #dcd6f7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(28, 28, 43, 0.95);
+            margin-top: auto;
+        }
+
+        footer p {
+            color: #f0e3ca;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .info-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-text h2 {
+                font-size: 2em;
+            }
+        }
+
+
+
+
+
+header {
+    position: relative;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+.social-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
 }
 
-body {
-  line-height: 1.6;
+.social-links a img {
+    width: 36px;  /* official icon size */
+    height: 36px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-links a img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.3);
 }
