@@ -1,0 +1,17 @@
+:root {
+  --bg: #0e141b;
+  --text: #d6dce2;
+  --muted: #8b98a5;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+}
