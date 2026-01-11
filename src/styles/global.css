@@ -15,6 +15,10 @@
             flex-direction: column;
         }
 
+        body a:hover {
+            color: #a59ee8;
+        }
+
         header {
             text-align: center;
             padding: 50px 20px;
@@ -181,6 +185,10 @@
 
         footer p {
             color: #f0e3ca;
+        }
+
+        footer a:hover {
+            color: #a59ee8;
         }
 
         /* Responsive */
