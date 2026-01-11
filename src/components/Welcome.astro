@@ -12,14 +12,15 @@ import '../styles/global.css';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Arcadia Bay</title>
+    <title>Welcome to Arcadia Bay!</title>
     <link rel="icon" type="image/x-icon" href="assets/ab/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/assets/fonts/lifeisstrange.ttf" rel="stylesheet">
 
 </head>
 <body>
     <header>
-		<a href="/" class="logo">
+		<a class="logo">
         <img src="assets/ab/Prescott-foundation.png" alt="Prescott Foundation">
         <img src="assets/ab/blackwell.jpg" alt="Blackwell Academy">
         <img src="assets/ab/TwoWhalesDiner logo.png" alt="Two Whales Diner">
@@ -27,7 +28,7 @@ import '../styles/global.css';
         <img src="assets/ab/Typhon mining HS.png" alt="Typhon Mining">
     	</a>
 
-        <h1>Welcome to Arcadia Bay</h1>
+        <h1>Welcome to Arcadia Bay!</h1>
         <p>Discover Arcadia Bay – Nature, Culture, Adventure</p>
 		<div class="social-links">
     <a href="https://reddit.com/r/lifeisstrange" target="_blank" rel="noopener" aria-label="LifeIsStrange Reddit">
@@ -43,7 +44,7 @@ import '../styles/global.css';
 
 <!-- Sound button -->
     <button id="soundToggle" aria-label="Toggle sound">
-        <img src="assets/ab/butterfly.png" alt="Butterfly" />
+        <img src="assets/ab/blue-butterfly.gif" alt="Butterfly" />
         <span class="sound-text"></span>
     </button>
 
@@ -63,9 +64,9 @@ import '../styles/global.css';
 
     <div class="hero">
         <div class="hero-text">
-            <h2>AB TEXT</h2>
-            <p>undertext</p>
-			
+            <h2>Visit us Today!</h2>
+            <p><small>Arcadia Bay, OR</small></p>
+            <p>Since 1895</p>
         </div>
     </div>
 	
@@ -82,8 +83,8 @@ import '../styles/global.css';
 
         <div class="about-text">
             <p>
-                Nestled along the Oregon coast, Arcadia Bay is a small town shaped by salt air,
-                old money, and long memories. Storms come and go. Some things linger.
+                Nestled along the Oregon coast, Arcadia Bay is a small town, shaped by salt air,
+                old money, and long memories. Storms come and go. Some things remain.
                 <br><br>
                 Founded as a fishing and lumber community, the town grew around its harbor,
                 its forests, and the families who claimed them early on. Generations have passed
@@ -160,45 +161,78 @@ import '../styles/global.css';
         
     </section>
 
-    <footer>
-        <p>&copy; 2026 Arcadia Bay. All rights reserved.<br><small>Arcadiabay.org funded by The Prescott Foundation</small></p>
-		<small>Created and hosted by <a href="https://melbyeit.dk">MelbyeDev</a></small>
-    </footer>
-    
-</body>
-</html>
+    </main>
+
+<footer>
+    <p>
+        &copy; <span id="copyright"></span> Arcadia Bay. All rights reserved.
+        <br>
+        <small>
+            Arcadiabay.org funded by
+            <a href="https://life-is-strange.fandom.com/wiki/Prescott_Foundation">
+                The Prescott Foundation
+            </a>
+        </small>
+    </p>
+
+    <small>
+        Created and hosted by <a href="https://melbyeit.dk">MelbyeDev</a><br>
+        Contact: <a href="mailto:mail@melbyeit.dk">mail@melbyeit.dk</a>
+    </small>
+</footer>
+
 <script>
-const toggleBtn = document.getElementById("soundToggle");
-const soundText = toggleBtn.querySelector(".sound-text");
-const music = document.getElementById("bgMusic");
+document.addEventListener("DOMContentLoaded", () => {
+    // COPYRIGHT
+    const copyrightEl = document.getElementById("copyright");
+    if (copyrightEl) {
+        copyrightEl.textContent = new Date().getFullYear();
+    }
 
-// Load saved state
-let isPlaying = localStorage.getItem("musicOn") === "true";
+    // MUSIC AND TOGGLE BUTTON
+    const toggleBtn = document.getElementById("soundToggle");
+    const music = document.getElementById("bgMusic");
 
+    // Only proceed if BOTH elements exist
+    if (!toggleBtn || !music) return;
 
-// Apply saved state on load
-window.addEventListener("load", () => {
+    const soundText = toggleBtn.querySelector(".sound-text");
+    let isPlaying = localStorage.getItem("musicOn") === "true";
+
+    function updateButton() {
+        if (soundText) {
+            soundText.textContent = isPlaying ? "Sound: On" : "Sound: Off";
+        }
+    }
+
+    // Apply saved state
     updateButton();
     if (isPlaying) {
         music.volume = 0.5;
-        music.play();
+        // play may fail if browser blocks autoplay
+        music.play().catch(() => {
+            isPlaying = false;
+            localStorage.setItem("musicOn", "false");
+            updateButton();
+        });
     }
-});
 
-// Toggle music
-toggleBtn.addEventListener("click", () => {
-    if (!isPlaying) {
-        music.volume = 0.5;
-        music.play();
-        isPlaying = true;
-    } else {
-        music.pause();
-        isPlaying = false;
-    }
-    localStorage.setItem("musicOn", isPlaying);
-    updateButton();
+    // Toggle button click
+    toggleBtn.addEventListener("click", () => {
+        if (!music) return; // extra safety
+        if (isPlaying) {
+            music.pause();
+        } else {
+            music.volume = 0.5;
+            music.play().catch(() => {});
+        }
+
+        isPlaying = !isPlaying;
+        localStorage.setItem("musicOn", isPlaying.toString());
+        updateButton();
+    });
 });
 
 </script>
-  </main>
-  
+</body>
+</html>
