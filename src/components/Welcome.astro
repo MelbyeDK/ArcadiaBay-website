@@ -13,14 +13,15 @@ import '../styles/global.css';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Arcadia Bay</title>
+    <link rel="icon" type="image/x-icon" href="assets/ab/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
     <header>
 		<a href="/" class="logo">
-        <img src="assets/ab//Prescott-foundation.png" alt="Prescott Foundation">
-        <img src="assets/ab//blackwell.jpg" alt="Blackwell Academy">
+        <img src="assets/ab/Prescott-foundation.png" alt="Prescott Foundation">
+        <img src="assets/ab/blackwell.jpg" alt="Blackwell Academy">
         <img src="assets/ab/TwoWhalesDiner logo.png" alt="Two Whales Diner">
         <img src="assets/ab/BeanHipCafeLeaflet.jpg" alt="BeanHipCafe">
         <img src="assets/ab/Typhon mining HS.png" alt="Typhon Mining">
@@ -29,17 +30,27 @@ import '../styles/global.css';
         <h1>Welcome to Arcadia Bay</h1>
         <p>Discover Arcadia Bay – Nature, Culture, Adventure</p>
 		<div class="social-links">
-        <a href="https://reddit.com/r/lifeisstrange" target="_blank" rel="noopener" aria-label="LifeIsStrange Reddit">
-            <img src="assets/ab/reddit.png" alt="Reddit">
-        </a>
-        <a href="discord.gg/twowhalesdiner" target="_blank" rel="noopener" aria-label="TwoWhalesDiner Discord">
-            <img src="assets/ab/discord.png" alt="Discord">
-        </a>
-        <a href="https://www.facebook.com/DONTNOD.Entertainment" target="_blank" rel="noopener" aria-label="DONTNOD Facebook">
-            <img src="assets/ab/facebook.png" alt="Facebook">
-        </a>
-		
-    </div>
+    <a href="https://reddit.com/r/lifeisstrange" target="_blank" rel="noopener" aria-label="LifeIsStrange Reddit">
+        <img src="assets/ab/reddit.png" alt="Reddit">
+    </a>
+    <a href="https://discord.gg/twowhalesdiner" target="_blank" rel="noopener" aria-label="TwoWhalesDiner Discord">
+        <img src="assets/ab/discord.png" alt="Discord">
+    </a>
+    <a href="https://www.facebook.com/DONTNOD.Entertainment" target="_blank" rel="noopener" aria-label="DONTNOD Facebook">
+        <img src="assets/ab/facebook.png" alt="Facebook">
+    </a>
+</div>
+
+<!-- Sound button -->
+    <button id="soundToggle" aria-label="Toggle sound">
+        <img src="assets/ab/butterfly.png" alt="Butterfly" />
+        <span class="sound-text"></span>
+    </button>
+
+<!-- Audio element -->
+<audio id="bgMusic" loop>
+    <source src="assets/audio/lis-theme.mp3" type="audio/mpeg">
+</audio>
 </header>
 
     <nav>
@@ -52,19 +63,50 @@ import '../styles/global.css';
 
     <div class="hero">
         <div class="hero-text">
-            <h2>Where Every Choice Matters</h2>
-            <p>Embrace the beauty and secrets of Arcadia Bay</p>
+            <h2>AB TEXT</h2>
+            <p>undertext</p>
 			
         </div>
     </div>
 	
 
     <section id="about">
-        <h3>About Arcadia Bay</h3>
-        <p style="text-align:center; max-width:700px; margin:auto; color:#dcd6f7;">
-            Arcadia Bay is a picturesque coastal town full of charm, history, and mystery. Explore its hidden corners, connect with its people, and uncover the choices that shape its story.
-        </p>
-    </section>
+    <h3>About Arcadia Bay</h3>
+
+    <div class="about-layout">
+        <div class="about-images">
+            <img src="assets/ab/lighthouse.webp" alt="Arcadia Bay Lighthouse">
+            <img src="assets/ab/ArcadiaBayBeach.png" alt="Arcadia Bay Beach">
+            <img src="assets/ab/oldblackwell.webp" alt="Blackwell Academy">
+        </div>
+
+        <div class="about-text">
+            <p>
+                Nestled along the Oregon coast, Arcadia Bay is a small town shaped by salt air,
+                old money, and long memories. Storms come and go. Some things linger.
+                <br><br>
+                Founded as a fishing and lumber community, the town grew around its harbor,
+                its forests, and the families who claimed them early on. Generations have passed
+                through the same streets, the same diners, and the same schools, leaving behind
+                stories that are rarely written down.
+                <br><br>
+                Arcadia Bay moves at a slower pace. Mornings arrive wrapped in fog, and evenings
+                settle quietly over the cliffs. Visitors come for the scenery, but residents know
+                the weather can change without warning, and that the past has a way of resurfacing.
+                <br><br>
+                Today, the town balances tradition with change. Blackwell Academy overlooks the bay
+                and draws students and educators from across the state, while long-time locals work
+                to preserve what remains of the harbor and surrounding coastline. Industry,
+                education, and tourism exist side by side, sometimes uneasily.
+                <br><br>
+                Whether you’re passing through or planning to stay, Arcadia Bay leaves an
+                impression. It’s a place where moments matter, where choices echo, and where not
+                everything can be forgotten.
+            </p>
+        </div>
+    </div>
+</section>
+
 
     <section id="places">
         <h3>Popular Places</h3>
@@ -72,7 +114,7 @@ import '../styles/global.css';
             <div class="card">
                 <img src="assets/ab/oldblackwell.webp" alt="Blackwell Academy">
                 <h4>Blackwell Academy</h4>
-                <p>The iconic school where students learn, create, and sometimes find themselves in unexpected situations.</p>
+                <p>Private arts school overlooking the bay. Known for photography, scholarships, and secrets.</p>
             </div>
             <div class="card">
                 <img src="assets/ab/Arcadiagas.webp" alt="Arcadia Gas">
@@ -82,12 +124,12 @@ import '../styles/global.css';
             <div class="card">
                 <img src="assets/ab/overlookpark.webp" alt="Culmination State Park">
                 <h4>Culmination State Park</h4>
-                <p>Culmination Peak, renamed Culmination State Park, was designated as a state park in 1997 by order of Governor John Kitzhaber. </p>
+                <p>Trails through forest and cliffside. Watch the weather change without warning. </p>
             </div>
 			<div class="card">
                 <img src="assets/ab/lighthouse.webp" alt="Arcadia Bay Lighthouse">
                 <h4>Arcadia Bay Lighthouse</h4>
-                <p>The must‑see landmark for sunset views and coastal photography.</p>
+                <p>A quiet lookout point north of town. Best visited at sunset. The wind never really stops.</p>
             </div>
 			<div class="card">
                 <img src="assets/ab/ArcadiaBayBeach.png" alt="The Beach & Harbor">
@@ -119,10 +161,44 @@ import '../styles/global.css';
     </section>
 
     <footer>
-        <p>&copy; 2026 Arcadia Bay. All rights reserved.</p>
+        <p>&copy; 2026 Arcadia Bay. All rights reserved.<br><small>Arcadiabay.org funded by The Prescott Foundation</small></p>
 		<small>Created and hosted by <a href="https://melbyeit.dk">MelbyeDev</a></small>
     </footer>
-
+    
 </body>
 </html>
+<script>
+const toggleBtn = document.getElementById("soundToggle");
+const soundText = toggleBtn.querySelector(".sound-text");
+const music = document.getElementById("bgMusic");
+
+// Load saved state
+let isPlaying = localStorage.getItem("musicOn") === "true";
+
+
+// Apply saved state on load
+window.addEventListener("load", () => {
+    updateButton();
+    if (isPlaying) {
+        music.volume = 0.5;
+        music.play();
+    }
+});
+
+// Toggle music
+toggleBtn.addEventListener("click", () => {
+    if (!isPlaying) {
+        music.volume = 0.5;
+        music.play();
+        isPlaying = true;
+    } else {
+        music.pause();
+        isPlaying = false;
+    }
+    localStorage.setItem("musicOn", isPlaying);
+    updateButton();
+});
+
+</script>
   </main>
+  
