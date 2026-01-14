@@ -32,7 +32,7 @@
         position: absolute;
         left: 20px;
         display: flex;
-        align-items: center;
+        align-items: right;
         gap: 8px;
         
         }
@@ -58,7 +58,8 @@
         nav {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            flex-wrap: wrap;        /* allow wrapping */
+            gap: 12px 20px;         /* vertical / horizontal spacing */
             background: rgba(28, 28, 43, 0.9);
             padding: 15px 0;
             font-weight: bold;
@@ -242,8 +243,8 @@ header {
 /* Sound button styling */
 #soundToggle {
     position: absolute; /* stay in the top-right corner */
-    top: 20px;
-    right: 80px;
+    top: 50px;        /* push butterfly below logo */
+    right: 77px;
     display: flex;
     background: none;
     border: 0px solid rgba(240, 227, 202, 0.6);
@@ -378,10 +379,13 @@ header {
 }
 @media (max-width: 768px) {
   .logo {
-    position: static;        /* re-enter normal flow */
-    justify-content: center;
-    margin-bottom: 15px;
+    position:fixed;
+    top: 20px;
+    /*right: 20px;       move logo to the right */
+    left: 20px;       /* disable left positioning */
     flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px;
   }
 
   .logo img {
