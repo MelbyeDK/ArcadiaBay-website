@@ -326,3 +326,53 @@ header {
         min-width: 250px;
     }
 }
+#businesses {
+    text-align: center;
+    font-family: 'LifeIsStrange', serif;
+}
+
+.business-intro {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #dcd6f7;
+    font-style: italic;
+}
+
+.business-marquee {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 15px 0;
+    background: rgba(40, 40, 60, 0.4);
+    border-radius: 10px;
+}
+
+.business-track {
+    display: flex;
+    gap: 25px;
+    width: max-content;
+    animation: scrollBusinesses 60s linear infinite;
+}
+
+.business-track span {
+    font-family: 'LifeIsStrange', serif;
+    font-size: 1.1em;
+    white-space: nowrap;
+    color: #f0e3ca;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.business-track span:hover {
+    opacity: 1;
+    color: #ffd6a5;
+}
+
+@keyframes scrollBusinesses {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
