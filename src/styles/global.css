@@ -376,3 +376,19 @@ header {
         transform: translateX(-50%);
     }
 }
+@media (max-width: 768px) {
+  .logo {
+    position: static;        /* re-enter normal flow */
+    justify-content: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+
+  .logo img {
+    width: 36px;
+  }
+
+  header {
+    padding-top: 25px;
+  }
+}
