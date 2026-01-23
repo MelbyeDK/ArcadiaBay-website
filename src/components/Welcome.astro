@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // COPYRIGHT
     const copyrightEl = document.getElementById("copyright");
     if (copyrightEl) {
-        copyrightEl.textContent = new Date().getFullYear();
+        copyrightEl.textContent = String(new Date().getFullYear());
     }
 
     // MUSIC AND TOGGLE BUTTON
@@ -271,16 +271,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Apply saved state
+const audioEl = document.querySelector<HTMLAudioElement>("#music");
+if (music instanceof HTMLAudioElement) {
     updateButton();
+
     if (isPlaying) {
         music.volume = 0.5;
-        // play may fail if browser blocks autoplay
+
         music.play().catch(() => {
             isPlaying = false;
             localStorage.setItem("musicOn", "false");
             updateButton();
         });
     }
+}
+
+
 
     // Toggle button click
     toggleBtn.addEventListener("click", () => {

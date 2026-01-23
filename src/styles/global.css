@@ -396,3 +396,10 @@ header {
     padding-top: 25px;
   }
 }
+
+
+#contact{
+    a {
+        color: #a0f2f9;
+    }
+}
