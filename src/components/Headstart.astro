@@ -1,3 +1,7 @@
+
+---
+import '../styles/global.css';
+---
 <div id="container">
   <main>
 	<link rel="stylesheet" href="/src/styles/global.css" />
@@ -34,9 +38,8 @@
         <img src="assets/ab/TwoWhalesDiner logo.png" alt="Two Whales Diner">
         <img src="assets/ab/BeanHipCafeLeaflet.jpg" alt="BeanHipCafe">
     	</a>
-        <h1>Welcome to Arcadia Bay!</h1>
-        <small>WARNING! THIS WEBSITE IS STILL A WORK IN PROGRESS</small>
-        <p>Discover Arcadia Bay Today!<!--– Nature, Culture, Adventure</p><br>
+        <h1>Welcome to Arcadia Bay!</h1><br> <small>Since 1895<br>ArcadiaBay, OR.<br></small>
+        <p>Discover Arcadia Bay Today! Nature, Culture, Adventure</p><br><!--–
         <p>WARNING! THIS WEBSITE IS STILL A WORK IN PROGRESS</p> -->
 		<div class="social-links">
     <a href="https://reddit.com/r/lifeisstrange" target="_blank" rel="noopener" aria-label="LifeIsStrange Reddit">
@@ -74,9 +77,7 @@
 
     <div class="hero">
         <div class="hero-text">
-            <h2>Visit us Today!</h2>
-            <p>Since 1895</p>
-            <p><small>Arcadia Bay, OR</small></p>
+            <slot name="hero" />
         </div>
     </div>
 

@@ -1,6 +1,7 @@
 ---
-import Headstart from '../components/headstart.astro';
+import Headstart from '../components/Headstart.astro';
 import Layout from '../layouts/Layout.astro';
+import Footend from '../components/footend.astro'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -11,5 +12,109 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <Headstart>
-	<headstart />
+  <div slot="hero">
+    <h2>Visit us Today!</h2>
+    <p>Since 1895</p>
+    <p><small>Arcadia Bay, OR</small></p>
+  </div>
 </Headstart>
+
+<html lang="en">
+<section id="about">
+<h3>About Arcadia Bay</h3><br>
+
+    <div class="about-layout">
+        <div class="about-images">
+            <img src="assets/ab/lighthouse.webp" alt="Arcadia Bay Lighthouse">
+            <img src="assets/ab/ArcadiaBayBeach.png" alt="Arcadia Bay Beach">
+            <img src="assets/ab/oldblackwell.webp" alt="Blackwell Academy">
+        </div>
+
+        <div class="about-text">
+            <p>
+                Nestled along the Oregon coast, Arcadia Bay is a small town, shaped by salt air,
+                old money, and long memories. Storms come and go. Some things remain.
+                <br><br>
+                Founded as a fishing and lumber community, the town grew around its harbor,
+                its forests, and the families who claimed them early on. Generations have passed
+                through the same streets, the same diners, and the same schools, leaving behind
+                stories that are rarely written down.
+                <br><br>
+                Arcadia Bay moves at a slower pace. Mornings arrive wrapped in fog, and evenings
+                settle quietly over the cliffs. Visitors come for the scenery, but residents know
+                the weather can change without warning, and that the past has a way of resurfacing.
+                <br><br>
+                Today, the town balances tradition with change. Blackwell Academy overlooks the bay
+                and draws students and educators from across the state, while long-time locals work
+                to preserve what remains of the harbor and surrounding coastline. Industry,
+                education, and tourism exist side by side, sometimes uneasily.
+                <br><br>
+                Whether you’re passing through or planning to stay, Arcadia Bay leaves an
+                impression. It’s a place where moments matter, where choices echo, and where not
+                everything can be forgotten.
+            </p>
+        </div>
+    </div>
+</section>
+
+ <section id="businesses">
+        <h3>Businesses in Arcadia Bay</h3>
+        <p class="business-intro">
+            Family-owned shops, quiet cafés, and places that have been here longer than most people remember.
+        </p>
+
+        <div class="business-marquee">
+            <div class="business-track">
+                <span>Two Whales Diner</span>
+                <span>Bean Hip Café</span>
+                <span>Arcadia Gas</span>
+                <span>Pan Estates</span>
+                <span>Up All Nite Donuts</span>
+                <span>Rue Altimore</span>
+                <span>Harbor Inn</span>
+                <span>Arcadia Bay Rental Services</span>
+                <span>Arcadia Bus Lines</span>
+                <span>Tony's Liquor Store</span>
+                <span>ACFC Drive-Thru</span>
+                <span>McFlinn</span>
+                <span>Arcadia Bay Grocery&Deli</span>
+                <span>Pacific Steve's Famous Crab</span>
+                <span>American Rust Junkyard</span>
+                <span>Blackwell Academy</span>
+
+                <span>Two Whales Diner</span>
+                <span>Bean Hip Café</span>
+                <span>Arcadia Gas</span>
+                <span>Pan Estates</span>
+                <span>Up All Nite Donuts</span>
+                <span>Rue Altimore</span>
+                <span>Harbor Inn</span>
+                <span>Arcadia Bay Rental Services</span>
+                <span>Arcadia Bus Lines</span>
+                <span>Tony's Liquor Store</span>
+                <span>ACFC Drive-Thru</span>
+                <span>McFlinn</span>
+                <span>Arcadia Bay Grocery&Deli</span>
+                <span>Pacific Steve's Famous Crab</span>
+                <span>American Rust Junkyard</span>
+                <span>Blackwell Academy</span>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <h3>Contact</h3>
+        <p style="text-align:center; max-width:700px; margin:auto; color:#dcd6f7;">
+            Want to learn more about Arcadia Bay or share your own story?<br>
+			You can contact us directly at: <a href="mailto:info@arcadiabay.org">info@arcadiabay.org</a> and we will respond as fast as we can!
+		</p>
+        
+    </section>
+
+    </main>
+
+</html>
+<Footend>
+	<footend />
+</Footend>
