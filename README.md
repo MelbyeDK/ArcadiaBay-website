@@ -27,8 +27,6 @@ Designed in the style of a **tourism / visit-town website**, blending realism wi
 - **Google Fonts**
 - Static assets (images & icons)
 
-No backend required.
-
 ---
 
 ## 🚀 Getting Started (Local Development)
